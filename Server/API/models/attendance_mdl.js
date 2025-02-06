@@ -6,10 +6,6 @@ module.exports = (sequelize, DataTypes) => {
             validate: {
                 notEmpty: { msg: "Status is required." }
             }
-        },
-        date: {
-            type: DataTypes.DATE,
-            allowNull: false
         }
     }, {
         timestamps: true

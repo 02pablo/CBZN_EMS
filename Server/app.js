@@ -11,6 +11,8 @@ const app = express();
 
 
 //IMPORT ALL ROUTERS NEEDED
+const attendanceRouter = require('./API/routers/attendance_rtr'
+)
 
 // para lang makita kung anong request sa console
 app.use((req, res, next) => {
@@ -23,6 +25,8 @@ app.use((req, res, next) => {
 //TO LOG CLIENT REQUEST-RESPONSE DATA IN A DEV ENVIRONMENT
 app.use(morgan('dev'));
 app.use(express.json())
+
+
 // app.use(cookieParser());
 
 //PARSE DATA THAT ARE URLENCODED
@@ -81,7 +85,7 @@ app.use((req, res, next) => {
 
 
 //MIDDLEWARE FOR THE ROUTERS
-
+app.use('/attendance', attendanceRouter)
 
 
 //ERROR MIDDLEWARES
