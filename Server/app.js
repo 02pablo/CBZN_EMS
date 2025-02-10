@@ -12,7 +12,10 @@ const app = express();
 
 //IMPORT ALL ROUTERS NEEDED
 const attendanceRouter = require('./API/routers/attendance_rtr'
-)
+);
+const archiveRouter = require('./API/routers/archived_rtr');
+
+const { arch } = require('os');
 
 // para lang makita kung anong request sa console
 app.use((req, res, next) => {
@@ -86,6 +89,7 @@ app.use((req, res, next) => {
 
 //MIDDLEWARE FOR THE ROUTERS
 app.use('/attendance', attendanceRouter)
+app.use('/archive', archiveRouter)
 
 
 //ERROR MIDDLEWARES

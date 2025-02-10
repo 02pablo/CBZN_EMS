@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('User', {
+    const Archive = sequelize.define('Archive', {
         surname: {
             type: DataTypes.STRING,
             allowNull: false
@@ -12,6 +12,12 @@ module.exports = (sequelize, DataTypes) => {
         middle_initial: {
             type: DataTypes.STRING
         },
+
+        // DO NOT REMOVE BIRTHDATE AND DEPARTMENT_ID. CHECK ERD FOR USERS AND ARCHIVE.
+        // birthdate: {
+        //     type: DataTypes.DATE,
+        //     allowNull: false
+        // },  
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -31,10 +37,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
-        status: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+        // department_id: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
     }, {
         timestamps: true,
         hooks: {
@@ -51,16 +57,5 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
 
-    User.associate = (models) => {
-        User.belongsTo(models.Department, {
-        });
-        User.hasOne(models.Schedule, {
-            onDelete: 'CASCADE',
-            onUpdate: 'CASCADE'
-        });
-        User.hasMany(models.Attendance, {
-            onDelete: 'CASCADE',
-            onUpdate: 'CASCADE'
-        });
-    };
+    return Archive;
 }

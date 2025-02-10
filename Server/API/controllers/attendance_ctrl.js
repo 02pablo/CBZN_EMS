@@ -69,7 +69,7 @@ const getAttendanceById = async (req, res) => {
         return res.status(500).json({
             successful: false,
             message:
-            err.message || "An unexpected error occurred."
+                err.message || "An unexpected error occurred."
         });
     }
 };
