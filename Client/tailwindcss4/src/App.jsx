@@ -4,6 +4,7 @@ import EmployeeAttendance from './Components/employeeAttendance.jsx';
 import EditUser from './Components/editUSer.jsx';
 import EmployeeHome from './Components/employHome.jsx';
 import AddUser from './Components/addUser.jsx';
+import ResetPass from "./Components/resetPass.jsx";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Routes>
         <Route path="/" element={<LoginPage />} />
+        <Route path="/resetPass" element={<ResetPass />} />
         <Route path="/employeeHome" element={<EmployeeHome />} />
         <Route path="/addUser" element={<AddUser />} />
         {/* <Route path="/attendancePage" element={<AttendancePage />} /> */}
