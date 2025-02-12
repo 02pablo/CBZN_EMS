@@ -1,30 +1,22 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from './Components/loginPage.jsx';
-import EmployHome from './Components/employHome.jsx';
-import AddUser from './Components/addUser.jsx';
-import AddUser from './Components/addUser.jsx';
-import AddUser from './Components/addUser.jsx';
+import EditUser from './Components/editUSer.jsx';
+import EmployeeHome from './Components/employHome.jsx';
 import AddUser from './Components/addUser.jsx';
 
 
 function App() {
-  const [count, setCount] = useState(0)
   return (
     <>
       <Router>
         <Routes>
-        {/* <Route path="/loginPage" element={<LoginPage />} />
-        <Route path="/EmployHome" element={<EmployHome />} />
-        </Routes> */}
-        <AddUser />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/employeeHome" element={<EmployeeHome />} />
+        <Route path="/addUser" element={<AddUser />} />
+        {/* <Route path="/attendancePage" element={<AttendancePage />} /> */}
+          <Route path="/editUser" element={<EditUser />} />
+        </Routes>
       </Router>
-      <div>
-        {/* {/* {/* <LoginPage /> */}
-        <AddUser /> */}
-        <AddUser /> */}
-        <AddUser />
-      </div>
     </>
   )
 }
